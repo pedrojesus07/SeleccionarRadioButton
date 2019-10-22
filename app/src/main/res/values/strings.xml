@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SeleccionarRadioButton</string>
+    <string name="lacteos">Lacteos</string>
+    <string name="carne">Carne</string>
+    <string name="pescado">Pescado</string>
+    <string name="verdura">Verdura</string>
+</resources>
