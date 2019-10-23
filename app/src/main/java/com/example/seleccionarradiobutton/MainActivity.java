@@ -49,27 +49,24 @@ public class MainActivity extends AppCompatActivity {
 
                 } else {
                     // one of the radio buttons is checked
-                    Log.v("xxx",rbgroup.getCheckedRadioButtonId()+"");
 
-                    //1-2131165315
-                    //2-2131165309
-                    //3-2131165310
-                    //4-2131165311
+                    rbt1 = (RadioButton) findViewById(rbgroup.getCheckedRadioButtonId());
+                    Log.v("xxx",rbt1.getText()+"");
 
-                    switch (rbgroup.getCheckedRadioButtonId()){
-                        case 2131165315:
+                    switch (rbt1.getText().toString()){
+                        case "Lacteos":
                             intent.putExtra("opcion", "1");
                             startActivity(intent);
                             break;
-                        case 2131165309:
+                        case "Carne":
                             intent.putExtra("opcion", "2");
                             startActivity(intent);
                             break;
-                        case 2131165310:
+                        case "Pescado":
                             intent.putExtra("opcion", "3");
                             startActivity(intent);
                             break;
-                        case 2131165311:
+                        case "Verdura":
                             intent.putExtra("opcion", "4");
                             startActivity(intent);
                             break;
