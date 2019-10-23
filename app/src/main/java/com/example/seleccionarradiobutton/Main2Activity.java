@@ -1,6 +1,7 @@
 package com.example.seleccionarradiobutton;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -11,10 +12,21 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main2Activity extends AppCompatActivity {
 
     private String opcion;
+    private Spinner spn;
+    private ArrayAdapter<String> dataAdapter;
+    private Button btAcumular;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +35,9 @@ public class Main2Activity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Intent intent = new Intent();
-        intent = getIntent();
-        opcion = intent.getStringExtra("opcion");
+        initComponents();
+        additem();
+        listenerSpinner();
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -37,6 +49,61 @@ public class Main2Activity extends AppCompatActivity {
         });
 
         Log.v("xvy",opcion);
+    }
+
+    private void listenerSpinner() {
+        btAcumular.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.v("cvv",spn.getSelectedItem().toString());
+            }
+        });
+    }
+
+    private void initComponents() {
+        Intent intent = new Intent();
+        intent = getIntent();
+        opcion = intent.getStringExtra("opcion");
+
+        spn = findViewById(R.id.spn);
+    }
+
+    private void additem() {
+        Resources res = getResources();
+        String[] lacteos = res.getStringArray(R.array.Lacteos);
+        String[] carne = res.getStringArray(R.array.Carne);
+        String[] pescado = res.getStringArray(R.array.Pescado);
+        String[] verdura = res.getStringArray(R.array.Verdura);
+
+        switch (opcion){
+            case "1":
+                dataAdapter = new ArrayAdapter<String>(this,
+                        android.R.layout.simple_spinner_item, lacteos);
+                dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spn.setAdapter(dataAdapter);
+                break;
+            case "2":
+                dataAdapter = new ArrayAdapter<String>(this,
+                        android.R.layout.simple_spinner_item, carne);
+                dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spn.setAdapter(dataAdapter);
+                break;
+            case "3":
+                dataAdapter = new ArrayAdapter<String>(this,
+                        android.R.layout.simple_spinner_item, pescado);
+                dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spn.setAdapter(dataAdapter);
+                break;
+            case "4":
+                dataAdapter = new ArrayAdapter<String>(this,
+                        android.R.layout.simple_spinner_item, verdura);
+                dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spn.setAdapter(dataAdapter);
+                break;
+
+        }
+
+
     }
 
 }
