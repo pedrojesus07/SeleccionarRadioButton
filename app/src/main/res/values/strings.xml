@@ -4,4 +4,29 @@
     <string name="carne">Carne</string>
     <string name="pescado">Pescado</string>
     <string name="verdura">Verdura</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string-array name="Lacteos">
+        <item>Queso 1€</item>
+        <item>Leche 0,50€</item>
+        <item>Yogurt 0,60€</item>
+        <item>Batido 1,10€</item>
+    </string-array>
+    <string-array name="Carne">
+        <item>Pollo 2€</item>
+        <item>Ternera 3€</item>
+        <item>Pavo 4€</item>
+        <item>Cerdo 5€</item>
+    </string-array>
+    <string-array name="Pescado">
+        <item>Salmon 4€</item>
+        <item>Atun 3,50€</item>
+        <item>Sardinas 4,60€</item>
+        <item>Aguja 2,10€</item>
+    </string-array>
+    <string-array name="Verdura">
+        <item>Puerro 1€</item>
+        <item>Berenjena 0,50€</item>
+        <item>Guisantes 0,60€</item>
+        <item>Habichuelas 1,10€</item>
+    </string-array>
 </resources>

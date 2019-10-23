@@ -2,6 +2,7 @@ package com.example.seleccionarradiobutton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -37,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void initMethot() {
 
+        final Intent intent = new Intent(this, Main2Activity.class);
+
+
         btAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,12 +58,20 @@ public class MainActivity extends AppCompatActivity {
 
                     switch (rbgroup.getCheckedRadioButtonId()){
                         case 2131165315:
+                            intent.putExtra("opcion", "1");
+                            startActivity(intent);
                             break;
                         case 2131165309:
+                            intent.putExtra("opcion", "2");
+                            startActivity(intent);
                             break;
                         case 2131165310:
+                            intent.putExtra("opcion", "3");
+                            startActivity(intent);
                             break;
                         case 2131165311:
+                            intent.putExtra("opcion", "4");
+                            startActivity(intent);
                             break;
                     }
                 }
